@@ -6,7 +6,7 @@ This repository contains the code for training a U-Net based emulator of the PIS
 The code has been run with Python 3.11, with the dependencies in `requirements.txt`.
 
 ## Scripts
-The `Scripts` folder contains an example script (`forced-1848-1999+ssp585-2015-2089+mercator-2010-2016+landschutzer-1982-2004.slurm`) for training a model on a SLURM cluster: `
+The `Scripts` folder contains an example script (`forced-1848-1999+ssp585-2015-2089+mercator-2010-2016+landschutzer-1982-2004.slurm`) for training a model on a SLURM cluster.
 Modify the $PYTHONPATH variable to point to the `src` directory. 
 This script takes a .yml config file.
 For it to run, you need to specify:
