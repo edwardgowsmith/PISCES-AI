@@ -8,7 +8,7 @@ The code has been run with Python 3.11, with the dependencies in `requirements.t
 ## Scripts
 The `Scripts` folder contains an example script (`forced-1848-1999+ssp585-2015-2089+mercator-2010-2016+landschutzer-1982-2004.slurm`) for training a model on a SLURM cluster.
 Modify the $PYTHONPATH variable to point to the `src` directory. 
-This script takes a .yml config file.
+This script takes a .yaml config file.
 For it to run, you need to specify:
 - $MASK_FILE, a .npy file of [X, Y] with 1 corresponding to the ocean, and 0 corresponding to the land. Scripts to generate this can be found in `src/train`.
 - $ROOT, as the location of the directory on your system
