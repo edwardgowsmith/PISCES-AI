@@ -20,10 +20,11 @@ For it to run, you need to specify:
 ## Data
 The training script expects the data in the form of one .npy file per variable per year, of the shape [T, X, Y] where T is the number of timesteps, X and Y are the grid dimensions.
 For example, in `${DATA_ROOT}/ocean_data_1848_2020_v2/`, we have the files:
-tos_1848.npy
-sos_1848.npy
-chl_1848.npy
-dpco2_1848.npy
+- tos_1848.npy
+- sos_1848.npy
+- chl_1848.npy
+- dpco2_1848.npy
+For the year 1848, and equivalently for every other year.
 
 
 
