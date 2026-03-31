@@ -1,0 +1,55 @@
+mask_file: $MASK_FILE
+co2_file: $ROOT/global_co2_ann_1700_2020.txt
+
+training:
+  data_dirs:
+    - path: "${DATA_ROOT}/ocean_data_1848_2020_v2/"
+      years: !!python/tuple [1848, 1999]
+      averaging: [1]
+    - path: "${DATA_ROOT}/ocean_data_ssp585/"
+      years: !!python/tuple [2015, 2089]
+      frequency: 584
+    - path: "${DATA_ROOT}/mercator_data/"
+      years: !!python/tuple [2010, 2016]
+      averaging: [1]
+    - path: "${DATA_ROOT}/landschutzer/"
+      years: !!python/tuple [1982, 2004]
+      averaging: [1]
+    
+evaluation:
+  data_dirs:
+    - path: "${DATA_ROOT}/ocean_data_1848_2020_v2/"
+      years: !!python/tuple [2000, 2010]
+      averaging: [1]
+      add_on_path: forced_2000_2010
+    - path: "${DATA_ROOT}/ocean_data_ssp585/"
+      years: !!python/tuple [2090, 2094]
+      frequency: 584
+      add_on_path: ssp585_2090_2094
+    - path: "${DATA_ROOT}/mercator_data/"
+      years: !!python/tuple [2017, 2017]
+      averaging: [1]
+      add_on_path: mercator_2017
+    - path: "${DATA_ROOT}/landschutzer/"
+      years: !!python/tuple [2005, 2014]
+      averaging: [1]
+      add_on_path: landschutzer_2005_2014
+
+wandb_project: $WANDB_PROJECT
+wandb_name: $WANDB_NAME
+wandb_key: $WANDB_KEY
+train_steps: 200000
+eval_every: 5000
+batch_size: 32
+seed: 0
+linear_lr_scheduler: True
+prediction: "chl_dcpo2"
+log_every: 10
+no_freq: True
+dataset_weighting: True
+weight_decay: 1e-3
+input_vars:
+  - tos
+  - sos
+positive_output: True
+positive_min_value: 1e-6
